@@ -1,0 +1,51 @@
+.loginPage {
+    width: 100vw;
+    height: 100vh;
+}
+
+.loginPage , .gmail {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.title {
+    color: rgb(93, 93, 93);
+    font-size: 22px ;
+    margin: auto;
+    text-align: center;
+    padding: 10px 0;
+}
+
+.container {
+    border: 1px solid silver;
+    border-radius: 10px;
+    padding: 20px 50px;
+}
+
+.error {
+    color: orangered;
+    width: 20rem;
+    text-align: center;
+    height: 1rem;
+}
+
+.gmail  {
+    margin: 20px auto;
+    color: white;
+    width: fit-content;
+    padding: 5px;
+    border-radius: 5px;
+    cursor: pointer;
+    background-color: #0f9d58;
+    
+}
+
+.gmail:hover {
+    background-color: #07713e;
+}
+
+.gmail img {
+    width: 25px;
+    padding: 5px;
+}
