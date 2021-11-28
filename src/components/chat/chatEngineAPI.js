@@ -15,17 +15,20 @@ const api = (history) => {
     }).then(() => history.push('/chat'))
 
     .catch(() => {  // if user not exists , adds user to database
+        const data =  {
+            "username": name,
+            "secret": uid,
+            "email": email
+        }
+        
+
         const config = {
             method: 'post',
             url: 'https://api.chatengine.io/users/',
             headers: {
-                'PRIVATE-KEY': '{{ca28bad1-ab17-48c3-9bc7-1402ec5f8594}}'
+                'PRIVATE-KEY': 'ca28bad1-ab17-48c3-9bc7-1402ec5f8594'
             },
-            data : {
-                "username": name,
-                "secret": uid,
-                "email": email
-            }
+            data : data
         };
     
         axios(config).then(() => {

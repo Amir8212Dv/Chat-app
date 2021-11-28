@@ -1,11 +1,10 @@
 /* eslint-disable no-unused-vars */
-import React, { useContext } from 'react';
+import React, { useState } from 'react';
+import { useHistory } from 'react-router';
 // Firebase authentication
 import app from './Firebase';
 // CSS
 import styles from '../../styles/Login.module.css'
-// Context
-import { setContext } from '../context/Context';
 // Component
 import loginWIthEmail from './emailAuthentication';
 // google Icon
@@ -15,7 +14,11 @@ import google from '../../icon/google.svg'
 
 const LoginPage = () => {
     localStorage.clear()
-    const { error , setError , history} = useContext(setContext)
+    
+    const history = useHistory()
+    const [error , setError] = useState(false)
+
+
     return (
         
         <div className={styles.loginPage}>

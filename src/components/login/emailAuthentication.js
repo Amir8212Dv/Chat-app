@@ -1,5 +1,5 @@
 import { getAuth, signInWithPopup, GoogleAuthProvider } from "firebase/auth";
-
+import api from "../chat/chatEngineAPI";
 
 const loginWIthEmail = (setError , history) => {
 
@@ -9,11 +9,10 @@ const loginWIthEmail = (setError , history) => {
     signInWithPopup(auth, provider)
     .then(async (result) => {
         const user = result.user;
-        localStorage.setItem('name' , user.displayName)
-        localStorage.setItem('uid' , user.uid)
-        localStorage.setItem('email' ,user.email)
-        localStorage.setItem('image' , user.photoURL)
-        history.push('/chat')
+        await localStorage.setItem('name' , user.displayName)
+        await localStorage.setItem('uid' , user.uid)
+        await localStorage.setItem('email' ,user.email)
+        api(history)
         
   }).catch((error) => {
     setError(error.message)
