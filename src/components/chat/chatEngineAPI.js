@@ -19,7 +19,7 @@ const api = (history) => {
             method: 'post',
             url: 'https://api.chatengine.io/users/',
             headers: {
-                'PRIVATE-KEY': '{{ca28bad1-ab17-48c3-9bc7-1402ec5f8594}}'
+                'PRIVATE-KEY': 'ca28bad1-ab17-48c3-9bc7-1402ec5f8594'
             },
             data : {
                 "username": name,
